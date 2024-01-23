@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valid Palindrome</title>
+  </head>
+  <body>
+    <h1>Valid Palindrome</h1>
+    <script>
+      let s1 = "";
+      let s2 = "";
+      var isPalindrome = function (s) {
+        if (s === " ") {
+          return true;
+        }
+
+        const s3 = s.replace(/[^a-zA-Z0-9]/g, ""); //regex = /[^a-zA-Z]/g  the ^ sign is used to negate everything that is not an alphabet g is given to run it globally or for every character.
+
+        for (let i = 0; i < s3.length; i++) {
+          s1 += s3[i].toLowerCase();
+        }
+        console.log(s1);
+        for (let i = s3.length - 1; i >= 0; i--) {
+          s2 += s3[i].toLowerCase();
+        }
+        console.log(s2);
+
+        return s1 === s2;
+      };
+      console.log(isPalindrome("A man, a plan, a canal: Panama"));
+
+      //   function isPalindrome(str) {
+      //   Check if the string is empty
+      //   if (str === "") {
+      //     return true;
+      //   }
+
+      //   // Remove all non-alphanumeric characters from the string
+      //   str = str.replace(/[^a-zA-Z0-9]/g, "");
+
+      //   // Reverse the string
+      //   var reversedStr = str.split("").reverse().join("");
+
+      //   // Check if the original string and the reversed string are equal
+      //   return str === reversedStr;
+      // }
+
+      //   var isPalindrome = function (s) {
+      //     if (s === " ") {
+      //       return true;
+      //     }
+
+      //     const s3 = s.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+      //     let l = 0;
+      //     let r = s3.length - 1;
+
+      //     while (l <= r) {
+      //       if (s3[l] === s3[r]) {
+      //         l++;
+      //         r--;
+      //       } else {
+      //         return false;
+      //       }
+      //     }
+      //     return true;
+      //   };
+    </script>
+  </body>
+</html>
