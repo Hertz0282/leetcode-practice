@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concatenation of Array</title>
+  </head>
+  <body>
+    <h1>Concatenation of Array</h1>
+    <script>
+      var getConcatenation = function (nums) {
+        const nums2 = nums;
+        const numsCombined = [...nums, ...nums2];
+        return numsCombined;
+      };
+
+      console.log(getConcatenation([1, 2, 3]));
+    </script>
+  </body>
+</html>
