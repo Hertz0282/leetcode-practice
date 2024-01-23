@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anagram</title>
+  </head>
+  <body>
+    <h1>Anagram</h1>
+    <script>
+      const count = {};
+
+      var isAnagram = function (s, t) {
+        if (s.length !== t.length) {
+          return true;
+        }
+
+        for (let i = 0; i < s.length; i++) {
+          if (!count[s[i]]) count[s[i]] = 0;
+          if (!count[t[i]]) count[t[i]] = 0;
+          count[s[i]]++;
+          count[t[i]]--;
+        }
+
+        for (let ch in count) {
+          if (count[ch] !== 0) return false;
+        }
+
+        return true;
+      };
+
+      console.log(isAnagram("a", "a"));
+    </script>
+  </body>
+</html>
