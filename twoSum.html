@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two Sum</title>
+  </head>
+  <body>
+    <h1>Two Sum</h1>
+    <script>
+      var twoSum = function (nums, target) {
+        const map = {};
+        for (let i = 0; i < nums.length; i++) {
+          let value = nums[i];
+          let complement = target - value;
+          if (map[complement] !== undefined) {
+            return [map[complement], i];
+          } else {
+            map[value] = i;
+          }
+        }
+      };
+
+      console.log(twoSum([3, 2, 3], 6));
+    </script>
+  </body>
+</html>
