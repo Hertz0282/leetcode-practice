@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valid Parenthesis</title>
+  </head>
+  <body>
+    <h1>Valid Parenthesis</h1>
+    <script>
+      var isValid = function (s) {
+        const hashMap = { "(": ")", "[": "]", "{": "}" };
+        const stack = [];
+        for (let ch of s) {
+          if (hashMap[ch]) {
+            stack.push(hashMap[ch]);
+          } else if (stack.length > 0 && stack[stack.length - 1] === ch) {
+            stack.pop();
+          } else {
+            return false;
+          }
+        }
+        return stack.length === 0;
+      };
+      console.log(isValid("()[]{"));
+    </script>
+  </body>
+</html>
