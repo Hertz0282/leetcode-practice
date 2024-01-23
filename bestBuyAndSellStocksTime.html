@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Buy and Sell Stocks Time</title>
+  </head>
+  <body>
+    <h1>Best Buy and Sell Stocks Time</h1>
+    <script>
+      var maxProfit = function (prices) {
+        let minBuyPrice = prices[0];
+        let max = 0;
+        for (let i = 1; i < prices.length; i++) {
+          const sellPrice = prices[i];
+          const profit = sellPrice - minBuyPrice;
+          max = Math.max(max, profit);
+          minBuyPrice = Math.min(minBuyPrice, prices[i]);
+        }
+        return max;
+      };
+
+      const prices = [7, 1, 5, 3, 6, 4];
+      console.log(maxProfit(prices));
+    </script>
+  </body>
+</html>
