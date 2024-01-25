@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unique Email Address</title>
+  </head>
+  <body>
+    <h1>Unique Email Address</h1>
+    <p>
+      This is a very good problem for learning set.Please go through the code.
+    </p>
+
+    <script>
+      var numUniqueEmails = function (emails) {
+        let emailSet = new Set();
+        for (let i = 0; i < emails.length; i++) {
+          let [local, domain] = emails[i].split("@");
+          local = local.replace(/\./g, "").split("+");
+          let uniqueEmail = local[0] + "@" + domain;
+          emailSet.add(uniqueEmail);
+        }
+        return emailSet.size;
+      };
+      console.log(
+        numUniqueEmails([
+          "test.email+alex@leetcode.com",
+          "test.e.mail+bob.cathy@leetcode.com",
+          "testemail+david@lee.tcode.com",
+        ])
+      );
+    </script>
+  </body>
+</html>
